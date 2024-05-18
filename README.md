@@ -2,7 +2,7 @@
 
 This repository contains guides and configuration files for deploying WSO2 API Manager on Kubernetes using Minikube. It includes configurations to connect WSO2 API Manager with a MySQL server and use NGINX Ingress Controller for accessing the WSO2 API Manager.
 
-![](https://github.com/csdgurugegit/projectimages/blob/main/WSO2-APIM-K8-Deployment.jpg)
+![](https://github.com/csdgurugegit/projectimages/blob/main/WSO2-APIM-K8-Deployment-Update.jpg)
 
 ## Setting Up Kubernetes (Minikube)
 
