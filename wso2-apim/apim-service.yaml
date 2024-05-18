@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wso2-am-service
+  namespace: apim
+spec:
+  selector:
+    app: wso2-am
+  ports:
+    - name: pass-through-http
+      protocol: TCP
+      port: 8280
+    - name: pass-through-https
+      protocol: TCP
+      port: 8243
+    - name: binary
+      protocol: TCP
+      port: 9611
+    - name: binary-secure
+      protocol: TCP
+      port: 9711
+    - name: jms-tcp
+      protocol: TCP
+      port: 5672
+    - name: servlet-https
+      protocol: TCP
+      port: 9443
+    - name: websub-http
+      protocol: TCP
+      port: 9021
+    - name: websub-https
+      protocol: TCP
+      port: 8021

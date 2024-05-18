@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wso2-am-deployment
+  namespace: apim
+  labels:
+    app: wso2-am
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: wso2-am
+  template:
+    metadata:
+      labels:
+        app: wso2-am
+    spec:
+      containers:
+      - name: wso2-am
+        image: <"add-apim-image">
+        ports:
+        - containerPort: 8280
+          protocol: "TCP"
+        - containerPort: 8243
+          protocol: "TCP"
+        - containerPort: 9763
+          protocol: "TCP"
+        - containerPort: 9443
+          protocol: "TCP"
+        - containerPort: 9711
+          protocol: "TCP"
+        - containerPort: 9611
+          protocol: "TCP"
+        - containerPort: 5672
+          protocol: "TCP"
+        volumeMounts:
+          - name: apim-volume-configmap
+            mountPath: /home/wso2carbon/wso2am-4.3.0/repository/conf    
+      volumes:
+        - name: apim-volume-configmap
+          configMap:
+            name: wso2-am-configmap
